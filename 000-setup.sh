@@ -1,6 +1,7 @@
 # # get repo
 # sudo apt-get -y install git
 # git clone https://github.com/joshmcqueen/hashicorp-ssh-demo.git
+# sudo chmod -R +x hashicorp-ssh-demo/
 
 # env variables
 export VAULT_IP="34.215.11.231"

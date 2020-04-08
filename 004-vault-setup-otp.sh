@@ -1,7 +1,13 @@
 #!/bin/sh
 
-export VAULT_TOKEN=s.Ww6UDB5Jw7PJP2BlmzkXLpdV
-export VAULT_ADDR="http://127.0.0.1:8200"
+set -e
+PATH=`pwd`/bin:$PATH
+if [ -f 000-setup.sh ]; then
+    . ./000-setup.sh
+fi
+
+export VAULT_TOKEN=${VAULT_ROOT_TOKEN}
+export VAULT_ADDR=${VAULT_ADDR}
 
 # fetch, modify, and update default policy
 vault read -field rules sys/policy/default >> ~/default.hcl

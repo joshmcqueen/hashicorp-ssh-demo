@@ -1,7 +1,10 @@
 #!/bin/sh
 
 set -e
-./000-setup.sh
+PATH=`pwd`/bin:$PATH
+if [ -f 000-setup.sh ]; then
+    . ./000-setup.sh
+fi
 
 export VAULT_TOKEN=${VAULT_ROOT_TOKEN}
 export VAULT_ADDR=${VAULT_ADDR}
