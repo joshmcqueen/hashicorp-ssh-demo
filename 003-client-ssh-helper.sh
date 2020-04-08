@@ -16,7 +16,7 @@ sudo chown root:root /usr/local/bin/vault-ssh-helper
 
 sudo mkdir /etc/vault-ssh-helper.d/
 sudo tee /etc/vault-ssh-helper.d/config.hcl <<EOF
-vault_addr = "${VAULT_ADDR}"
+vault_addr = "http://${VAULT_IP}:8200"
 ssh_mount_point = "ssh"
 ca_cert = "-dev"
 tls_skip_verify = true
