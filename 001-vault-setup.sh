@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # set inital vault settings
-sudo tee /etc/vault.d/vault.hcl <<EOF
+sudo -u vault tee /etc/vault.d/vault.hcl <<EOF
 listener "tcp" {
   address       = "0.0.0.0:8200"
   tls_disable   = 1
@@ -30,3 +30,4 @@ PASSWORD = password123
 EOF
 
 sudo -u splunk /opt/splunkforwarder/bin/splunk start --accept-license --answer-yes
+
