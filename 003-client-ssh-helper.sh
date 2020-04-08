@@ -15,8 +15,6 @@ sudo chmod 0755 /usr/local/bin/vault-ssh-helper
 sudo chown root:root /usr/local/bin/vault-ssh-helper
 
 sudo mkdir /etc/vault-ssh-helper.d/
-
-VAULT_ADDR=${VAULT_ADDR}
 sudo tee /etc/vault-ssh-helper.d/config.hcl <<EOF
 vault_addr = "${VAULT_ADDR}"
 ssh_mount_point = "ssh"
