@@ -1,5 +1,8 @@
 #!/bin/sh
 
+set -e
+./000-setup.sh
+
 wget https://releases.hashicorp.com/vault-ssh-helper/0.1.4/vault-ssh-helper_0.1.4_linux_amd64.zip
 
 sudo apt-get -y install unzip
@@ -10,7 +13,7 @@ sudo chown root:root /usr/local/bin/vault-ssh-helper
 
 sudo mkdir /etc/vault-ssh-helper.d/
 sudo tee /etc/vault-ssh-helper.d/config.hcl <<EOF
-vault_addr = "http://34.221.249.140:8200"
+vault_addr = "http://${VAULT_ADDR}:8200"
 ssh_mount_point = "ssh"
 ca_cert = "-dev"
 tls_skip_verify = true

@@ -1,9 +1,10 @@
 #!/bin/sh
 
-# export VAULT_TOKEN=s.tUJ3hK3VsKyCuGnnmUfhUljp
-# export VAULT_ADDR="http://127.0.0.1:8200"
-
+set -e
 ./000-setup.sh
+
+export VAULT_TOKEN=${VAULT_ROOT_TOKEN}
+export VAULT_ADDR=${VAULT_ADDR}
 
 # create path for log file
 sudo mkdir /var/log/vault
