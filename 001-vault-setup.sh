@@ -30,4 +30,3 @@ PASSWORD = password123
 EOF
 
 sudo -u splunk /opt/splunkforwarder/bin/splunk start --accept-license --answer-yes
-
