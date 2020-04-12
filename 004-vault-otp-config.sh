@@ -32,16 +32,16 @@ vault policy write default ~/default.hcl
 # enable secrets engine
 vault secrets enable ssh
 
-vault write ssh/roles/otp_key_role key_type=otp default_user=ubuntu cidr_list=0.0.0.0/0
+vault write ssh/roles/consultants-otp key_type=otp default_user=ubuntu cidr_list=0.0.0.0/0
 
-tee test.hcl <<EOF
-path "ssh/creds/otp_key_role" {
+tee consultants-otp-role.hcl <<EOF
+path "ssh/creds/consultants-otp" {
   capabilities = ["create", "read", "update"]
 }
 EOF
 
-vault policy write test ./test.hcl
+vault policy write consultants-otp ./consultants-otp-role.hcl
 
 vault auth enable userpass
 
-vault write auth/userpass/users/josh password="password123" policies="test"
+vault write auth/userpass/users/carol password="password123" policies="consultants-otp"
