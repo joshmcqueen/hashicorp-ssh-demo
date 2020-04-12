@@ -6,6 +6,8 @@ if [ -f 000-setup.sh ]; then
     . ./000-setup.sh
 fi
 
+export VAULT_TOKEN=${VAULT_ROOT_TOKEN}
+export VAULT_ADDR=${VAULT_ADDR}
 
 vault secrets enable -path=audits-ca ssh
 
