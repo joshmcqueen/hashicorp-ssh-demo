@@ -10,4 +10,4 @@ export CLIENT_IP="54.186.19.132"
 
 # vault variables
 export VAULT_ADDR="http://127.0.0.1:8200"
-export VAULT_ROOT_TOKEN="s.uIGOAEWufOp60TuRS1SjLTyd"
+export VAULT_ROOT_TOKEN="s.cklyVPnyt7Nh8MlboxvPNGQZ"
