@@ -4,10 +4,10 @@
 # sudo chmod -R +x hashicorp-ssh-demo/
 
 # env variables
-export VAULT_IP="34.215.11.231"
-export ANALYTICS_IP="54.212.145.103"
-export CLIENT_IP="54.201.240.146"
+export VAULT_IP="35.164.148.29"
+export ANALYTICS_IP="34.213.142.10"
+export CLIENT_IP="54.244.214.189"
 
 # vault variables
 export VAULT_ADDR="http://127.0.0.1:8200"
-export VAULT_ROOT_TOKEN="s.tUJ3hK3VsKyCuGnnmUfhUljp"
+export VAULT_ROOT_TOKEN="s.uIGOAEWufOp60TuRS1SjLTyd"
