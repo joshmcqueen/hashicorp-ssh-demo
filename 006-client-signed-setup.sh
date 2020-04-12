@@ -7,13 +7,10 @@ if [ -f 000-setup.sh ]; then
 fi
 
 # get the public key from vault
-sudo curl -o /etc/ssh/trusted-user-ca-keys.pem http://${VAULT_IP}:8200/v1/ssh-client-signer/public_key
+sudo curl -o /etc/ssh/trusted-user-ca-keys.pem http://${VAULT_IP}:8200/v1/audits-ca/public_key
 
 # configure SSHD w/ new key
 echo "TrustedUserCAKeys /etc/ssh/trusted-user-ca-keys.pem" | sudo tee -a /etc/ssh/sshd_config
 
-# generate new key
-ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa 2>/dev/null <<< y >/dev/null
-
-vault write ssh-client-signer/sign/my-role \
-    public_key=@$HOME/.ssh/id_rsa.pub
+# restart sshd
+sudo systemctl restart sshd
